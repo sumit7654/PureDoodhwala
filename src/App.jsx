@@ -14,7 +14,6 @@ import {
   Twitter 
 } from 'lucide-react';
 
-// --- Components ---
 
 const Button = ({ children, variant = 'primary', className = '', ...props }) => {
   const baseStyle = "px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 shadow-md";
@@ -107,7 +106,7 @@ const Navbar = () => {
           ))}
           {/* for clicking mobile app link*/}
           <Button variant={scrolled ? 'primary' : 'secondary'} className="py-2 px-5 text-sm">
-            <a href="https://google.com" className="hover:text-blue-600 transition-colors">Download App</a>
+            <a href="https://puredoodhwala.onrender.com" className="hover:text-blue-600 transition-colors">Download App</a>
             {/* Download App */}
           </Button>
         </div>
