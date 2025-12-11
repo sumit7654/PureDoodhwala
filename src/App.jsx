@@ -80,13 +80,6 @@ const Navbar = () => {
     { name: 'About Us', href: '#about' },
     { name: 'Contact', href: '#footer' },
   ];
-            const users = [
-  "https://randomuser.me/api/portraits/women/44.jpg",
-  "https://randomuser.me/api/portraits/men/32.jpg",
-  "https://randomuser.me/api/portraits/women/68.jpg",
-  "https://randomuser.me/api/portraits/men/86.jpg"
-];
-
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
@@ -180,33 +173,8 @@ const Hero = () => {
                 Learn More <ChevronRight className="w-4 h-4 ml-1" />
               </Button>
             </div>
-
-  
-
-<div className="mt-8 flex items-center text-gray-500 text-sm">
-  {/* Avatar Group */}
-  <div className="flex -space-x-3 mr-4">
-    {users.map((userImg, index) => (
-      <img 
-        key={index} 
-        src={userImg} 
-        alt={`User ${index + 1}`} 
-        className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm"
-      />
-    ))}
-  </div>
-  
-  {/* Text Section */}
-  <div className="flex flex-col">
-     <div className="flex items-center gap-1">
-        <span className="font-bold text-black">10,000+</span>
-        <span>families</span>
-     </div>
-     <p className="text-xs text-gray-400">Trusted our service</p>
-  </div>
-</div>
             
-            {/* <div className="mt-8 flex items-center text-gray-500 text-sm">
+            <div className="mt-8 flex items-center text-gray-500 text-sm">
               <div className="flex -space-x-2 mr-4">
                 {[1,2,3,4].map(i => (
                   <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center overflow-hidden">
@@ -217,7 +185,7 @@ const Hero = () => {
               <p>Trusted by 10,000+ families</p>
             </div>
           </div>
-           */}
+          
           <div className="md:w-1/2 flex justify-center md:justify-end relative">
              {/* Mockup Representation */}
              <div className="relative w-72 h-[550px] bg-gray-900 rounded-[3rem] border-8 border-gray-900 shadow-2xl overflow-hidden">
