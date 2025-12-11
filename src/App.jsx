@@ -175,13 +175,24 @@ const Hero = () => {
             </div>
             
             <div className="mt-8 flex items-center text-gray-500 text-sm">
-              <div className="flex -space-x-2 mr-4">
-                {[1,2,3,4].map(i => (
-                  <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center overflow-hidden">
-                     <span className="text-xs font-bold text-gray-400">Sumit</span>
-                  </div>
-                ))}
-              </div>
+              <div className="flex -space-x-2 mr-4 isolate"> {/* Added 'isolate' for better stacking context */}
+  {[
+    // Real image URLs for avatars
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=faces&q=80",
+    "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=64&h=64&fit=crop&crop=faces&q=80",
+    "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=64&h=64&fit=crop&crop=faces&q=80",
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=faces&q=80"
+  ].map((imgSrc, i) => (
+    // Replaced div/span with an img tag
+    <img
+      key={i}
+      src={imgSrc}
+      alt={`Trusted User ${i+1}`}
+      // Added 'object-cover' to prevent image distortion and 'shadow-sm' for depth
+      className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm relative z-10 hover:z-20 transition-all"
+    />
+  ))}
+</div>
               <p>Trusted by 10,000+ families</p>
             </div>
           </div>
@@ -242,7 +253,7 @@ const Hero = () => {
                  <Truck className="text-blue-500 w-8 h-8" />
                  <div>
                    <div className="text-xs text-gray-500">Delivery</div>
-                   <div className="font-bold text-gray-800">By 7:00 AM</div>
+                   <div className="font-bold text-gray-800">By 8:00 AM</div>
                  </div>
                </div>
              </div>
@@ -306,7 +317,7 @@ const HowItWorks = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
           {/* Connector Line for Desktop */}
-          <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-1 bg-blue-200 z-0"></div>
+          <div className="hidden md:block absolute top-8 left-1/6 right-1/6 h-1 bg-blue-200 z-0"></div>
           
           <StepCard 
             number="1" 
@@ -331,7 +342,7 @@ const HowItWorks = () => {
 
 const Products = () => {
   const products = [
-    { name: "Pure Cow Milk", price: "₹65/L", color: "bg-blue-100", textColor: "text-blue-800" },
+    { name: "Pure Cow Milk", price: "₹60/L", color: "bg-blue-100", textColor: "text-blue-800" },
     { name: "Full Cream Buffalo Milk", price: "₹75/L", color: "bg-orange-100", textColor: "text-orange-800" },
     { name: "Low Fat Milk", price: "₹60/L", color: "bg-green-100", textColor: "text-green-800" },
   ];
@@ -437,13 +448,16 @@ const Footer = () => {
               Bringing purity back to your kitchen. We are committed to delivering fresh, unadulterated milk directly from farms to your family.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <a href="https://www.instagram.com/" target="_blank" 
+    rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <a href="https://www.facebook.com/" target="_blank" 
+    rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <a href="https://www.x.com/" target="_blank" 
+    rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
             </div>
